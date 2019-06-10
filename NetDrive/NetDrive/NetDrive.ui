@@ -40,7 +40,7 @@
      <string>服务器地址</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="server_address">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -129,7 +129,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>连接</string>
     </property>
    </widget>
   </widget>
