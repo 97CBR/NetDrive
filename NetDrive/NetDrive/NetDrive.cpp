@@ -1,26 +1,22 @@
 #include "NetDrive.h"
-#pragma comment(lib, "mpr.lib")
 #include <qdebug.h>
 #include <windows.h>
 #include <tchar.h>
 #include <WinNetWk.h>
 #include <stdio.h>
 #include <string>
+#include <LMUse.h>
+#include <LM.h>
+#include <lmcons.h>
 #include <iostream>
+
 #pragma comment(lib, "Mpr.lib")
+#pragma comment(lib, "Netapi32.lib")
 
 using namespace std;
 
-void CharToTchar(const char * _char, TCHAR * tchar)
-{
-	int iLength;
-
-	iLength = MultiByteToWideChar(CP_ACP, 0, _char, strlen(_char) + 1, NULL, 0);
-	MultiByteToWideChar(CP_ACP, 0, _char, strlen(_char) + 1, tchar, iLength);
-}
 
 LPCWSTR s2ws(const std::string& s)
-
 {
 
 	size_t origsize = s.length() + 1;
@@ -32,14 +28,23 @@ LPCWSTR s2ws(const std::string& s)
 	return wcstring;
 }
 
+LPWSTR ConvertCharToLPWSTR(const char * szString)
+{
+	int dwLen = strlen(szString) + 1;
+	int nwLen = MultiByteToWideChar(CP_ACP, 0, szString, dwLen, NULL, 0);//算出合适的长度
+	LPWSTR lpszPath = new WCHAR[dwLen];
+	MultiByteToWideChar(CP_ACP, 0, szString, dwLen, lpszPath, nwLen);
+	return lpszPath;
+}
+
+
 NetDrive::NetDrive(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
 
-
-
-		string szPasswd = "marx", szUserName = "admin"; //用户名和密码
+	addDisk();
+		string szPasswd = "marxcbr", szUserName = "admin"; //用户名和密码
 		NETRESOURCE net_Resource;
 		memset(&net_Resource, 0, sizeof(net_Resource));
 		net_Resource.dwDisplayType = RESOURCEDISPLAYTYPE_DIRECTORY;
@@ -50,7 +55,7 @@ NetDrive::NetDrive(QWidget *parent)
 		net_Resource.lpLocalName = TEXT("H:");  //映射成本地驱动器Z:
 		net_Resource.lpProvider = NULL;
 		net_Resource.lpRemoteName = TEXT("\\\\192.168.1.103\\photo"); // \\servername\共享资源名
-		DWORD dwFlags = CONNECT_UPDATE_PROFILE;
+		DWORD dwFlags = FALSE;
 
 		LPCWSTR pass ;
 		pass = s2ws(szPasswd);
@@ -59,13 +64,15 @@ NetDrive::NetDrive(QWidget *parent)
 
 		DWORD dw = WNetAddConnection2(&net_Resource, pass, user, dwFlags);
 		if (dw == ERROR_ALREADY_ASSIGNED) {
-			
+			qDebug() << "ERROR_ALREADY_ASSIGNED" << endl;
 		}
 		else if (dw == ERROR_DEVICE_ALREADY_REMEMBERED) {
-			
+			qDebug() << "ERROR_DEVICE_ALREADY_REMEMBERED" << endl;
+
 		}
-		else if (dw != NO_ERROR) {
-			
+		else if (dw == NO_ERROR) {
+			qDebug() << "NO_ERROR" << endl;
+
 		}
 		else if (dw == ERROR_SUCCESS)
 		{
@@ -73,16 +80,36 @@ NetDrive::NetDrive(QWidget *parent)
 			FILE *f = fopen("h:\\123.txt", "w");
 			if (f != NULL)
 			{
-				fwrite("12313", 5, 1, f);
+				fwrite("658", 5, 1, f);
 				fclose(f);
 			}
-			//Sleep(100);
-			////断开共享连接
-			//DWORD dwConFlig = WNetCancelConnection2(net_Resource.lpLocalName, CONNECT_UPDATE_PROFILE, true);
-			//if (dwConFlig != ERROR_SUCCESS)
-			//{
-			//	
-			//}
+			Sleep(1000);
+			//断开共享连接
+			DWORD dwConFlig = WNetCancelConnection2(net_Resource.lpLocalName, CONNECT_UPDATE_PROFILE, true);
+			if (dwConFlig != ERROR_SUCCESS)
+			{
+				
+			}
 		}
 
+}
+
+void NetDrive::addDisk() {
+	NET_API_STATUS sta;
+	LPTSTR  servername= NULL;
+	DWORD   LevelFlags;
+	USE_INFO_2 buf;
+	LPDWORD parm_err=NULL;
+
+	LevelFlags = 1;
+	buf.ui2_username = ConvertCharToLPWSTR("admin");
+	buf.ui2_password = ConvertCharToLPWSTR("marxcbr");
+	buf.ui2_remote = ConvertCharToLPWSTR("\\\\192.168.1.103\\photo");
+	buf.ui2_local = ConvertCharToLPWSTR("G:");
+	buf.ui2_asg_type = USE_WILDCARD;
+	servername = ConvertCharToLPWSTR("\\\\192.168.1.103\\photo");
+	sta = NetUseAdd(servername,LevelFlags, (LPBYTE)&buf,parm_err);
+
+	qDebug() << sta << endl;
+	qDebug() << buf.ui2_status << endl;
 }
