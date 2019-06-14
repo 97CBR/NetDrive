@@ -31,13 +31,13 @@ public:
     QWidget *centralWidget;
     QLabel *label;
     QLabel *label_2;
-    QLineEdit *server_address;
+    QLineEdit *remoteName;
     QLabel *label_3;
-    QLineEdit *lineEdit_2;
+    QLineEdit *localName;
     QLabel *label_4;
-    QLineEdit *lineEdit_3;
+    QLineEdit *userName;
     QLabel *label_5;
-    QLineEdit *lineEdit_4;
+    QLineEdit *password;
     QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -56,27 +56,27 @@ public:
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(200, 80, 71, 21));
-        server_address = new QLineEdit(centralWidget);
-        server_address->setObjectName(QStringLiteral("server_address"));
-        server_address->setGeometry(QRect(290, 80, 113, 20));
+        remoteName = new QLineEdit(centralWidget);
+        remoteName->setObjectName(QStringLiteral("remoteName"));
+        remoteName->setGeometry(QRect(290, 80, 113, 20));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(210, 130, 54, 12));
-        lineEdit_2 = new QLineEdit(centralWidget);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(290, 130, 113, 20));
+        localName = new QLineEdit(centralWidget);
+        localName->setObjectName(QStringLiteral("localName"));
+        localName->setGeometry(QRect(290, 130, 113, 20));
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(210, 180, 54, 12));
-        lineEdit_3 = new QLineEdit(centralWidget);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(290, 180, 113, 20));
+        userName = new QLineEdit(centralWidget);
+        userName->setObjectName(QStringLiteral("userName"));
+        userName->setGeometry(QRect(290, 180, 113, 20));
         label_5 = new QLabel(centralWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(210, 220, 54, 12));
-        lineEdit_4 = new QLineEdit(centralWidget);
-        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
-        lineEdit_4->setGeometry(QRect(290, 220, 113, 20));
+        password = new QLineEdit(centralWidget);
+        password->setObjectName(QStringLiteral("password"));
+        password->setGeometry(QRect(290, 220, 113, 20));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(280, 270, 75, 23));
@@ -93,6 +93,7 @@ public:
         NetDriveClass->setStatusBar(statusBar);
 
         retranslateUi(NetDriveClass);
+        QObject::connect(pushButton, SIGNAL(clicked()), NetDriveClass, SLOT(connectDrive()));
 
         QMetaObject::connectSlotsByName(NetDriveClass);
     } // setupUi

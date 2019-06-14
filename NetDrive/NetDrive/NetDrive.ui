@@ -40,7 +40,7 @@
      <string>服务器地址</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="server_address">
+   <widget class="QLineEdit" name="remoteName">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -63,7 +63,7 @@
      <string>本地磁盘</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="localName">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -86,7 +86,7 @@
      <string>账号</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
+   <widget class="QLineEdit" name="userName">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -109,7 +109,7 @@
      <string>密码</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_4">
+   <widget class="QLineEdit" name="password">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -157,5 +157,26 @@
  <resources>
   <include location="NetDrive.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>NetDriveClass</receiver>
+   <slot>connectDrive()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>330</x>
+     <y>320</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>295</x>
+     <y>430</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>connectDrive()</slot>
+  <slot>slot2()</slot>
+ </slots>
 </ui>

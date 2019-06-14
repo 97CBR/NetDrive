@@ -1,58 +1,38 @@
 #include "NetDrive.h"
 #include <qdebug.h>
 
-#include <qprocess.h>
-
-
 using namespace std;
 
-void CharToTchar(const char * _char, TCHAR * tchar)
-{
-	int iLength;
-
-	iLength = MultiByteToWideChar(CP_ACP, 0, _char, strlen(_char) + 1, NULL, 0);
-	MultiByteToWideChar(CP_ACP, 0, _char, strlen(_char) + 1, tchar, iLength);
-}
-
-LPCWSTR s2ws(const std::string& s)
-{
-
-	size_t origsize = s.length() + 1;
-	const size_t newsize = 100;
-	size_t convertedChars = 0;
-	wchar_t *wcstring = (wchar_t *)malloc(sizeof(wchar_t)*(s.length() - 1));
-	mbstowcs_s(&convertedChars, wcstring, origsize, s.c_str(), _TRUNCATE);
-
-	return wcstring;
-}
 
 NetDrive::NetDrive(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
 
-
-	MappingDrive("admin", "marxcbr", "B:", "\\\\192.168.1.103\\music");
-
-
 }
 
-DWORD NetDrive::MappingDrive(QString userName , QString password, QString localName, QString remoteName) {
+void NetDrive::connectDrive()
+{
+	QString userName = ui.userName->text();
+	QString password = ui.password->text();
+	QString localName = ui.localName->text();
+	QString remoteName = ui.remoteName->text();
+	MappingDrive(userName, password, localName, remoteName);
+}
 
-
+DWORD NetDrive::MappingDrive(QString userName, QString password, QString localName, QString remoteName) {
 
 	NETRESOURCE nr;
 	DWORD res;
-	
-	//TCHAR szUserName[32] = L"admin",
-	//	szPassword[32] = L"marxcbr",
-	//	szLocalName[32] = L"B:",
-	//	szRemoteName[MAX_PATH] = L"\\\\192.168.1.103\\music";
+
+	//qDebug() << sizeof("MARXCBR");
+	//qDebug() << sizeof( L"MARXCBR");
 
 	TCHAR *szUserName = { QStringToTCHAR(userName) },
-		*szPassword = { QStringToTCHAR(password)},
+		*szPassword = { QStringToTCHAR(password) },
 		*szLocalName = { QStringToTCHAR(localName) },
 		*szRemoteName = { QStringToTCHAR(remoteName) };
+
 	//
 	// Assign values to the NETRESOURCE structure.
 	//
@@ -73,5 +53,34 @@ DWORD NetDrive::MappingDrive(QString userName , QString password, QString localN
 		printf("Connection added \n", szRemoteName);
 	else
 		printf("Error: %ld\n", res);
+
+	switch (res)
+	{
+	case NO_ERROR:
+		qDebug()<<"网络驱动器映射成功";
+		break;
+	case ERROR_BAD_PROFILE:
+		qDebug() << "ERROR_BAD_PROFILE\n";
+		break;
+	case ERROR_CANNOT_OPEN_PROFILE:
+		qDebug() << "ERROR_CANNOT_OPEN_PROFILE\n";
+		break;
+	case ERROR_DEVICE_IN_USE:
+		qDebug() << "ERROR_DEVICE_IN_USE\n";
+		break;
+	case ERROR_EXTENDED_ERROR:
+		qDebug() << "ERROR_EXTENDED_ERROR\n";
+		break;
+	case ERROR_NOT_CONNECTED:
+		qDebug() << "ERROR_NOT_CONNECTED\n";
+		break;
+	case ERROR_OPEN_FILES:
+		qDebug() << "ERROR_OPEN_FILES\n";
+		break;
+	default:
+		qDebug() << "未知错误,可能需要帐号和密码认证，或者该主机或文件不存在\n";
+		break;
+	}
+
 	return res;
 }
