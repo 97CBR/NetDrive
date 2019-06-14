@@ -21,8 +21,7 @@ class NetDrive : public QMainWindow
 
 public:
 	NetDrive(QWidget *parent = Q_NULLPTR);
-	void MappingDrive();
-	DWORD setMapping(char driveLetter, string remoteShare, NETRESOURCE & nr, DWORD dwFlags);
+
 
 private:
 	Ui::NetDriveClass ui;
