@@ -15,7 +15,6 @@ void CharToTchar(const char * _char, TCHAR * tchar)
 }
 
 LPCWSTR s2ws(const std::string& s)
-
 {
 
 	size_t origsize = s.length() + 1;
@@ -33,13 +32,27 @@ NetDrive::NetDrive(QWidget *parent)
 	ui.setupUi(this);
 
 
+	MappingDrive("admin", "marxcbr", "B:", "\\\\192.168.1.103\\music");
+
+
+}
+
+DWORD NetDrive::MappingDrive(QString userName , QString password, QString localName, QString remoteName) {
+
+
 
 	NETRESOURCE nr;
 	DWORD res;
-	TCHAR szUserName[32] = L"admin",
-		szPassword[32] = L"marxcbr",
-		szLocalName[32] = L"B:",
-		szRemoteName[MAX_PATH] = L"\\\\192.168.1.103\\music";
+	
+	//TCHAR szUserName[32] = L"admin",
+	//	szPassword[32] = L"marxcbr",
+	//	szLocalName[32] = L"B:",
+	//	szRemoteName[MAX_PATH] = L"\\\\192.168.1.103\\music";
+
+	TCHAR *szUserName = { QStringToTCHAR(userName) },
+		*szPassword = { QStringToTCHAR(password)},
+		*szLocalName = { QStringToTCHAR(localName) },
+		*szRemoteName = { QStringToTCHAR(remoteName) };
 	//
 	// Assign values to the NETRESOURCE structure.
 	//
@@ -60,8 +73,5 @@ NetDrive::NetDrive(QWidget *parent)
 		printf("Connection added \n", szRemoteName);
 	else
 		printf("Error: %ld\n", res);
-	return;
-
-
+	return res;
 }
-
