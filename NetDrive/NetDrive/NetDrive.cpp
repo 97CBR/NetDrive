@@ -32,5 +32,36 @@ NetDrive::NetDrive(QWidget *parent)
 {
 	ui.setupUi(this);
 
+
+
+	NETRESOURCE nr;
+	DWORD res;
+	TCHAR szUserName[32] = L"admin",
+		szPassword[32] = L"marxcbr",
+		szLocalName[32] = L"B:",
+		szRemoteName[MAX_PATH] = L"\\\\192.168.1.103\\music";
+	//
+	// Assign values to the NETRESOURCE structure.
+	//
+	nr.dwType = RESOURCETYPE_ANY;
+	nr.lpLocalName = szLocalName;
+	nr.lpRemoteName = szRemoteName;
+	nr.lpProvider = NULL;
+	//
+	// Call the WNetAddConnection2 function to assign
+	//   a drive letter to the share.
+	//
+	res = WNetAddConnection2(&nr, szPassword, szUserName, FALSE);
+	//
+	// If the call succeeds, inform the user; otherwise,
+	//  print the error.
+	//
+	if (res == NO_ERROR)
+		printf("Connection added \n", szRemoteName);
+	else
+		printf("Error: %ld\n", res);
+	return;
+
+
 }
 

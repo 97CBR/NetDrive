@@ -2,18 +2,10 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_NetDrive.h"
-#pragma comment(lib, "mpr.lib")
-#include <string>
 #include <windows.h>
 #include <stdio.h>
-#include <tchar.h>
-#include <string.h>
-#include <psapi.h>
-#include <strsafe.h>
-#include <ctime> 
-#include <sstream>
-#include <vector>
-#include <fstream>
+#include <winnetwk.h>
+#pragma comment(lib, "mpr.lib")
 
 class NetDrive : public QMainWindow
 {
