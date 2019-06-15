@@ -3,12 +3,16 @@
 
 using namespace std;
 
+int tabStatu = 0;
 
 NetDrive::NetDrive(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
 
+	//为方便测试，暂时改 1 
+	tabStatu = 1;
+	//moveWidgets();
 }
 
 void NetDrive::connectDrive()
@@ -19,6 +23,50 @@ void NetDrive::connectDrive()
 	QString remoteName = ui.remoteName->text();
 	MappingDrive(userName, password, localName, remoteName);
 }
+
+void NetDrive::moveWidgets()
+{
+	//for (int i = 0; i < ui.widget_2->width(); i+=10)
+	//{
+	//	ui.widget_2->setGeometry(QRect(i, ui.widget_2->y(), ui.widget_2->width(), ui.widget_2->height()));
+	//	//Sleep(0.5);
+	//	this->repaint();
+	//}
+	if (tabStatu)
+	{
+		for (int i = 0; i < ui.widget_2->height(); i += 10)
+		{
+			ui.widget_3->setGeometry(QRect(ui.widget_3->x(), ui.widget_3->y() - 10, ui.widget_3->width(), ui.widget_3->height()));
+			//Sleep(0.5);
+			//ui.centralWidget->setGeometry();
+			//ui.centralWidget->resize
+			this->resize(ui.centralWidget->width(), ui.centralWidget->height() - 10);
+			this->repaint();
+		}
+		//QRect(ui.centralWidget->x(), ui.centralWidget->y(), ui.centralWidget->width(), ui.centralWidget->height() - 10)
+		tabStatu = 0;
+	}
+	else
+	{
+		for (int i = 0; i < ui.widget_2->height(); i += 10)
+		{
+			ui.widget_3->setGeometry(QRect(ui.widget_3->x(), ui.widget_3->y() + 10, ui.widget_3->width(), ui.widget_3->height()));
+			//ui.centralWidget->setGeometry(QRect(ui.centralWidget->x(), ui.centralWidget->y(), ui.centralWidget->width(), ui.centralWidget->height() + 10));
+			//Sleep(0.5);
+			this->resize(ui.centralWidget->width(), ui.centralWidget->height() + 10);
+			
+			this->repaint();
+		}
+		tabStatu = 1;
+	}
+
+	//QString userName = ui.userName->text();
+	//QString password = ui.password->text();
+	//QString localName = ui.localName->text();
+	//QString remoteName = ui.remoteName->text();
+	//MappingDrive(userName, password, localName, remoteName);
+}
+
 
 DWORD NetDrive::MappingDrive(QString userName, QString password, QString localName, QString remoteName) {
 

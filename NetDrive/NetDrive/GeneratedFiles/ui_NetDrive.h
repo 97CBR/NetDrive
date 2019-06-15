@@ -13,14 +13,15 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -29,71 +30,149 @@ class Ui_NetDriveClass
 {
 public:
     QWidget *centralWidget;
+    QWidget *widget;
+    QWidget *widget_2;
     QLabel *label;
     QLabel *label_2;
-    QLineEdit *remoteName;
+    QPushButton *pushButton;
     QLabel *label_3;
+    QLineEdit *remoteName;
+    QLabel *label_5;
+    QLineEdit *userName;
+    QLineEdit *password;
     QLineEdit *localName;
     QLabel *label_4;
-    QLineEdit *userName;
-    QLabel *label_5;
-    QLineEdit *password;
-    QPushButton *pushButton;
-    QMenuBar *menuBar;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
+    QLabel *label_15;
+    QWidget *widget_3;
+    QListWidget *listWidget;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label_11;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_12;
+    QLabel *label_13;
+    QProgressBar *progressBar;
+    QLabel *label_14;
+    QPushButton *pushButton_3;
 
     void setupUi(QMainWindow *NetDriveClass)
     {
         if (NetDriveClass->objectName().isEmpty())
             NetDriveClass->setObjectName(QStringLiteral("NetDriveClass"));
-        NetDriveClass->resize(863, 501);
+        NetDriveClass->resize(772, 692);
         centralWidget = new QWidget(NetDriveClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        label = new QLabel(centralWidget);
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(0, 0, 771, 50));
+        widget->setStyleSheet(QStringLiteral("background-color: rgb(198, 47, 47);"));
+        widget_2 = new QWidget(centralWidget);
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+        widget_2->setGeometry(QRect(0, 50, 770, 200));
+        widget_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        label = new QLabel(widget_2);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(220, 20, 211, 31));
-        label_2 = new QLabel(centralWidget);
+        label->setGeometry(QRect(210, 20, 211, 31));
+        label_2 = new QLabel(widget_2);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(200, 80, 71, 21));
-        remoteName = new QLineEdit(centralWidget);
-        remoteName->setObjectName(QStringLiteral("remoteName"));
-        remoteName->setGeometry(QRect(290, 80, 113, 20));
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(210, 130, 54, 12));
-        localName = new QLineEdit(centralWidget);
-        localName->setObjectName(QStringLiteral("localName"));
-        localName->setGeometry(QRect(290, 130, 113, 20));
-        label_4 = new QLabel(centralWidget);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(210, 180, 54, 12));
-        userName = new QLineEdit(centralWidget);
-        userName->setObjectName(QStringLiteral("userName"));
-        userName->setGeometry(QRect(290, 180, 113, 20));
-        label_5 = new QLabel(centralWidget);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(210, 220, 54, 12));
-        password = new QLineEdit(centralWidget);
-        password->setObjectName(QStringLiteral("password"));
-        password->setGeometry(QRect(290, 220, 113, 20));
-        pushButton = new QPushButton(centralWidget);
+        label_2->setGeometry(QRect(330, 70, 71, 21));
+        pushButton = new QPushButton(widget_2);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(280, 270, 75, 23));
+        pushButton->setGeometry(QRect(234, 152, 91, 31));
+        label_3 = new QLabel(widget_2);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(100, 70, 54, 12));
+        remoteName = new QLineEdit(widget_2);
+        remoteName->setObjectName(QStringLiteral("remoteName"));
+        remoteName->setGeometry(QRect(420, 70, 113, 20));
+        label_5 = new QLabel(widget_2);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(340, 120, 54, 12));
+        userName = new QLineEdit(widget_2);
+        userName->setObjectName(QStringLiteral("userName"));
+        userName->setGeometry(QRect(180, 120, 113, 20));
+        password = new QLineEdit(widget_2);
+        password->setObjectName(QStringLiteral("password"));
+        password->setGeometry(QRect(420, 120, 113, 20));
+        localName = new QLineEdit(widget_2);
+        localName->setObjectName(QStringLiteral("localName"));
+        localName->setGeometry(QRect(180, 70, 113, 20));
+        label_4 = new QLabel(widget_2);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(100, 120, 54, 12));
+        label_15 = new QLabel(widget_2);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setGeometry(QRect(370, 150, 251, 31));
+        widget_3 = new QWidget(centralWidget);
+        widget_3->setObjectName(QStringLiteral("widget_3"));
+        widget_3->setGeometry(QRect(0, 250, 771, 441));
+        widget_3->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        listWidget = new QListWidget(widget_3);
+        new QListWidgetItem(listWidget);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setGeometry(QRect(20, 30, 731, 301));
+        horizontalLayoutWidget = new QWidget(widget_3);
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(20, 340, 411, 81));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label_11 = new QLabel(horizontalLayoutWidget);
+        label_11->setObjectName(QStringLiteral("label_11"));
+
+        horizontalLayout->addWidget(label_11);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(6);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(-1, -1, -1, 0);
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(9);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(-1, -1, -1, 0);
+        label_12 = new QLabel(horizontalLayoutWidget);
+        label_12->setObjectName(QStringLiteral("label_12"));
+
+        horizontalLayout_2->addWidget(label_12);
+
+        label_13 = new QLabel(horizontalLayoutWidget);
+        label_13->setObjectName(QStringLiteral("label_13"));
+
+        horizontalLayout_2->addWidget(label_13);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        progressBar = new QProgressBar(horizontalLayoutWidget);
+        progressBar->setObjectName(QStringLiteral("progressBar"));
+        progressBar->setValue(24);
+
+        verticalLayout->addWidget(progressBar);
+
+        label_14 = new QLabel(horizontalLayoutWidget);
+        label_14->setObjectName(QStringLiteral("label_14"));
+
+        verticalLayout->addWidget(label_14);
+
+        verticalLayout->setStretch(0, 1);
+        verticalLayout->setStretch(1, 1);
+        verticalLayout->setStretch(2, 1);
+
+        horizontalLayout->addLayout(verticalLayout);
+
+        horizontalLayout->setStretch(0, 2);
+        horizontalLayout->setStretch(1, 10);
+        pushButton_3 = new QPushButton(widget_3);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(550, 370, 131, 31));
         NetDriveClass->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(NetDriveClass);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 863, 23));
-        NetDriveClass->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(NetDriveClass);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        NetDriveClass->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(NetDriveClass);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        NetDriveClass->setStatusBar(statusBar);
 
         retranslateUi(NetDriveClass);
         QObject::connect(pushButton, SIGNAL(clicked()), NetDriveClass, SLOT(connectDrive()));
+        QObject::connect(pushButton_3, SIGNAL(clicked()), NetDriveClass, SLOT(moveWidgets()));
 
         QMetaObject::connectSlotsByName(NetDriveClass);
     } // setupUi
@@ -103,10 +182,23 @@ public:
         NetDriveClass->setWindowTitle(QApplication::translate("NetDriveClass", "NetDrive", nullptr));
         label->setText(QApplication::translate("NetDriveClass", "\347\275\221\347\273\234\351\251\261\345\212\250\345\231\250\346\230\240\345\260\204\345\267\245\345\205\267", nullptr));
         label_2->setText(QApplication::translate("NetDriveClass", "\346\234\215\345\212\241\345\231\250\345\234\260\345\235\200", nullptr));
+        pushButton->setText(QApplication::translate("NetDriveClass", "\350\277\236\346\216\245\351\251\261\345\212\250\345\231\250", nullptr));
         label_3->setText(QApplication::translate("NetDriveClass", "\346\234\254\345\234\260\347\243\201\347\233\230", nullptr));
-        label_4->setText(QApplication::translate("NetDriveClass", "\350\264\246\345\217\267", nullptr));
         label_5->setText(QApplication::translate("NetDriveClass", "\345\257\206\347\240\201", nullptr));
-        pushButton->setText(QApplication::translate("NetDriveClass", "\350\277\236\346\216\245", nullptr));
+        label_4->setText(QApplication::translate("NetDriveClass", "\350\264\246\345\217\267", nullptr));
+        label_15->setText(QApplication::translate("NetDriveClass", "\345\201\232\346\210\220\344\270\200\344\270\252\345\217\257\344\274\270\347\274\251\347\232\204\345\212\250\346\225\210", nullptr));
+
+        const bool __sortingEnabled = listWidget->isSortingEnabled();
+        listWidget->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem = listWidget->item(0);
+        ___qlistwidgetitem->setText(QApplication::translate("NetDriveClass", "\345\220\216\347\273\255\345\260\206\344\270\213\351\235\242\347\232\204\347\273\204\345\220\210\346\216\247\344\273\266\344\275\234\344\270\272item", nullptr));
+        listWidget->setSortingEnabled(__sortingEnabled);
+
+        label_11->setText(QApplication::translate("NetDriveClass", "ICON", nullptr));
+        label_12->setText(QApplication::translate("NetDriveClass", "LocalName", nullptr));
+        label_13->setText(QApplication::translate("NetDriveClass", "remotePath", nullptr));
+        label_14->setText(QApplication::translate("NetDriveClass", "TextLabel", nullptr));
+        pushButton_3->setText(QApplication::translate("NetDriveClass", "\347\202\271\345\207\273\346\265\213\350\257\225\347\225\214\351\235\242\344\274\270\347\274\251", nullptr));
     } // retranslateUi
 
 };

@@ -36,10 +36,12 @@ class NetDrive : public QMainWindow
 
 public:
 	NetDrive(QWidget *parent = Q_NULLPTR);
+	
 	DWORD MappingDrive(QString userName, QString password, QString localName, QString remoteName);
 
 public slots:
 	void connectDrive();
+	void moveWidgets();
 
 private:
 	Ui::NetDriveClass ui;
