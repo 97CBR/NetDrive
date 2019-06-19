@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//标志填写账号的页面伸缩情况
+//0为隐藏，1为显示
 int tabStatu = 0;
 
 NetDrive::NetDrive(QWidget *parent)
@@ -12,7 +14,6 @@ NetDrive::NetDrive(QWidget *parent)
 
 	//为方便测试，暂时改 1 
 	tabStatu = 1;
-	//moveWidgets();
 }
 
 void NetDrive::connectDrive()
@@ -37,13 +38,11 @@ void NetDrive::moveWidgets()
 		for (int i = 0; i < ui.widget_2->height(); i += 10)
 		{
 			ui.widget_3->setGeometry(QRect(ui.widget_3->x(), ui.widget_3->y() - 10, ui.widget_3->width(), ui.widget_3->height()));
-			//Sleep(0.5);
-			//ui.centralWidget->setGeometry();
-			//ui.centralWidget->resize
+
 			this->resize(ui.centralWidget->width(), ui.centralWidget->height() - 10);
+
 			this->repaint();
 		}
-		//QRect(ui.centralWidget->x(), ui.centralWidget->y(), ui.centralWidget->width(), ui.centralWidget->height() - 10)
 		tabStatu = 0;
 	}
 	else
@@ -51,8 +50,7 @@ void NetDrive::moveWidgets()
 		for (int i = 0; i < ui.widget_2->height(); i += 10)
 		{
 			ui.widget_3->setGeometry(QRect(ui.widget_3->x(), ui.widget_3->y() + 10, ui.widget_3->width(), ui.widget_3->height()));
-			//ui.centralWidget->setGeometry(QRect(ui.centralWidget->x(), ui.centralWidget->y(), ui.centralWidget->width(), ui.centralWidget->height() + 10));
-			//Sleep(0.5);
+
 			this->resize(ui.centralWidget->width(), ui.centralWidget->height() + 10);
 			
 			this->repaint();
@@ -60,11 +58,6 @@ void NetDrive::moveWidgets()
 		tabStatu = 1;
 	}
 
-	//QString userName = ui.userName->text();
-	//QString password = ui.password->text();
-	//QString localName = ui.localName->text();
-	//QString remoteName = ui.remoteName->text();
-	//MappingDrive(userName, password, localName, remoteName);
 }
 
 

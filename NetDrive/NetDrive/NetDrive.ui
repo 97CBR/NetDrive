@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>772</width>
-    <height>692</height>
+    <width>771</width>
+    <height>693</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,6 +26,22 @@
     <property name="styleSheet">
      <string notr="true">background-color: rgb(198, 47, 47);</string>
     </property>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>10</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>上面要放按钮</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="widget_2" native="true">
     <property name="geometry">
@@ -39,136 +55,225 @@
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>20</y>
-       <width>211</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>网络驱动器映射工具</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>330</x>
-       <y>70</y>
-       <width>71</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>服务器地址</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>234</x>
-       <y>152</y>
+       <x>290</x>
+       <y>160</y>
        <width>91</width>
-       <height>31</height>
+       <height>21</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(184,37,37);
+font-size:12px;
+color: #FFFFFF;
+letter-spacing: 0;
+text-align: center;
+    border-top-right-radius: 8px; /* same radius as the QComboBox */
+    border-bottom-left-radius: 8px;
+
+border-top-right-radius: 8px; 
+border-bottom-left-radius: 8px;
+border-top-left-radius: 8px; 
+border-bottom-right-radius: 8px;</string>
      </property>
      <property name="text">
       <string>连接驱动器</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>70</y>
-       <width>54</width>
-       <height>12</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>本地磁盘</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="remoteName">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>70</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>340</x>
-       <y>120</y>
-       <width>54</width>
-       <height>12</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>密码</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="userName">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>120</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="password">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>120</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="localName">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>70</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>120</y>
-       <width>54</width>
-       <height>12</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>账号</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_15">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>150</y>
-       <width>251</width>
-       <height>31</height>
+       <x>600</x>
+       <y>161</y>
+       <width>151</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="text">
       <string>做成一个可伸缩的动效</string>
      </property>
+    </widget>
+    <widget class="QWidget" name="horizontalWidget_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>30</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(240, 240, 240);</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>8</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>8</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="localName">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid rgb(225, 225, 225);
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>输入本地盘符</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalWidget_3" native="true">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>30</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(240, 240, 240);</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>8</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>8</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="localName_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid rgb(225, 225, 225);
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>服务器地址</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalWidget_4" native="true">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>100</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(240, 240, 240);</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>8</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>8</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="userName">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid rgb(225, 225, 225);
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>账号</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalWidget_5" native="true">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>100</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(240, 240, 240);</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>8</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>8</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="password">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid rgb(225, 225, 225);
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>密码</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="widget_3" native="true">
@@ -217,6 +322,9 @@
       </item>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1">
+        <property name="spacing">
+         <number>10</number>
+        </property>
         <property name="bottomMargin">
          <number>0</number>
         </property>
@@ -246,6 +354,12 @@
         </item>
         <item>
          <widget class="QProgressBar" name="progressBar">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="value">
            <number>24</number>
           </property>
@@ -270,6 +384,17 @@
        <width>131</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(184,37,37);
+font-size:12px;
+color: #FFFFFF;
+letter-spacing: 0;
+text-align: center;
+border-top-right-radius: 8px; 
+border-bottom-left-radius: 8px;
+border-top-left-radius: 8px; 
+border-bottom-right-radius: 8px;</string>
      </property>
      <property name="text">
       <string>点击测试界面伸缩</string>

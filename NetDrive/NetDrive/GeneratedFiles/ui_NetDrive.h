@@ -31,18 +31,19 @@ class Ui_NetDriveClass
 public:
     QWidget *centralWidget;
     QWidget *widget;
+    QLabel *label_16;
     QWidget *widget_2;
-    QLabel *label;
     QLabel *label_2;
     QPushButton *pushButton;
-    QLabel *label_3;
     QLineEdit *remoteName;
     QLabel *label_5;
     QLineEdit *userName;
     QLineEdit *password;
-    QLineEdit *localName;
     QLabel *label_4;
     QLabel *label_15;
+    QWidget *horizontalWidget_2;
+    QHBoxLayout *horizontalLayout_3;
+    QLineEdit *localName;
     QWidget *widget_3;
     QListWidget *listWidget;
     QWidget *horizontalLayoutWidget;
@@ -60,29 +61,39 @@ public:
     {
         if (NetDriveClass->objectName().isEmpty())
             NetDriveClass->setObjectName(QStringLiteral("NetDriveClass"));
-        NetDriveClass->resize(772, 692);
+        NetDriveClass->resize(771, 693);
         centralWidget = new QWidget(NetDriveClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         widget = new QWidget(centralWidget);
         widget->setObjectName(QStringLiteral("widget"));
         widget->setGeometry(QRect(0, 0, 771, 50));
         widget->setStyleSheet(QStringLiteral("background-color: rgb(198, 47, 47);"));
+        label_16 = new QLabel(widget);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setGeometry(QRect(160, 10, 251, 31));
+        label_16->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
         widget_2 = new QWidget(centralWidget);
         widget_2->setObjectName(QStringLiteral("widget_2"));
         widget_2->setGeometry(QRect(0, 50, 770, 200));
         widget_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
-        label = new QLabel(widget_2);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(210, 20, 211, 31));
         label_2 = new QLabel(widget_2);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(330, 70, 71, 21));
         pushButton = new QPushButton(widget_2);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(234, 152, 91, 31));
-        label_3 = new QLabel(widget_2);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(100, 70, 54, 12));
+        pushButton->setGeometry(QRect(250, 150, 91, 21));
+        pushButton->setStyleSheet(QLatin1String("background-color: rgb(184,37,37);\n"
+"font-size:12px;\n"
+"color: #FFFFFF;\n"
+"letter-spacing: 0;\n"
+"text-align: center;\n"
+"    border-top-right-radius: 8px; /* same radius as the QComboBox */\n"
+"    border-bottom-left-radius: 8px;\n"
+"\n"
+"border-top-right-radius: 8px; \n"
+"border-bottom-left-radius: 8px;\n"
+"border-top-left-radius: 8px; \n"
+"border-bottom-right-radius: 8px;"));
         remoteName = new QLineEdit(widget_2);
         remoteName->setObjectName(QStringLiteral("remoteName"));
         remoteName->setGeometry(QRect(420, 70, 113, 20));
@@ -95,15 +106,34 @@ public:
         password = new QLineEdit(widget_2);
         password->setObjectName(QStringLiteral("password"));
         password->setGeometry(QRect(420, 120, 113, 20));
-        localName = new QLineEdit(widget_2);
-        localName->setObjectName(QStringLiteral("localName"));
-        localName->setGeometry(QRect(180, 70, 113, 20));
         label_4 = new QLabel(widget_2);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(100, 120, 54, 12));
         label_15 = new QLabel(widget_2);
         label_15->setObjectName(QStringLiteral("label_15"));
         label_15->setGeometry(QRect(370, 150, 251, 31));
+        horizontalWidget_2 = new QWidget(widget_2);
+        horizontalWidget_2->setObjectName(QStringLiteral("horizontalWidget_2"));
+        horizontalWidget_2->setGeometry(QRect(80, 30, 211, 41));
+        horizontalWidget_2->setStyleSheet(QStringLiteral("background-color: rgb(240, 240, 240);"));
+        horizontalLayout_3 = new QHBoxLayout(horizontalWidget_2);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(10, 8, 10, 8);
+        localName = new QLineEdit(horizontalWidget_2);
+        localName->setObjectName(QStringLiteral("localName"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(localName->sizePolicy().hasHeightForWidth());
+        localName->setSizePolicy(sizePolicy);
+        localName->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"border:1px solid rgb(225, 225, 225);\n"
+""));
+
+        horizontalLayout_3->addWidget(localName);
+
         widget_3 = new QWidget(centralWidget);
         widget_3->setObjectName(QStringLiteral("widget_3"));
         widget_3->setGeometry(QRect(0, 250, 771, 441));
@@ -168,6 +198,18 @@ public:
         pushButton_3 = new QPushButton(widget_3);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(550, 370, 131, 31));
+        pushButton_3->setStyleSheet(QLatin1String("background-color: rgb(184,37,37);\n"
+"font-size:12px;\n"
+"color: #FFFFFF;\n"
+"letter-spacing: 0;\n"
+"text-align: center;\n"
+"    border-top-right-radius: 8px; /* same radius as the QComboBox */\n"
+"    border-bottom-left-radius: 8px;\n"
+"\n"
+"border-top-right-radius: 8px; \n"
+"border-bottom-left-radius: 8px;\n"
+"border-top-left-radius: 8px; \n"
+"border-bottom-right-radius: 8px;"));
         NetDriveClass->setCentralWidget(centralWidget);
 
         retranslateUi(NetDriveClass);
@@ -180,13 +222,13 @@ public:
     void retranslateUi(QMainWindow *NetDriveClass)
     {
         NetDriveClass->setWindowTitle(QApplication::translate("NetDriveClass", "NetDrive", nullptr));
-        label->setText(QApplication::translate("NetDriveClass", "\347\275\221\347\273\234\351\251\261\345\212\250\345\231\250\346\230\240\345\260\204\345\267\245\345\205\267", nullptr));
+        label_16->setText(QApplication::translate("NetDriveClass", "\344\270\212\351\235\242\350\246\201\346\224\276\346\214\211\351\222\256", nullptr));
         label_2->setText(QApplication::translate("NetDriveClass", "\346\234\215\345\212\241\345\231\250\345\234\260\345\235\200", nullptr));
         pushButton->setText(QApplication::translate("NetDriveClass", "\350\277\236\346\216\245\351\251\261\345\212\250\345\231\250", nullptr));
-        label_3->setText(QApplication::translate("NetDriveClass", "\346\234\254\345\234\260\347\243\201\347\233\230", nullptr));
         label_5->setText(QApplication::translate("NetDriveClass", "\345\257\206\347\240\201", nullptr));
         label_4->setText(QApplication::translate("NetDriveClass", "\350\264\246\345\217\267", nullptr));
         label_15->setText(QApplication::translate("NetDriveClass", "\345\201\232\346\210\220\344\270\200\344\270\252\345\217\257\344\274\270\347\274\251\347\232\204\345\212\250\346\225\210", nullptr));
+        localName->setPlaceholderText(QApplication::translate("NetDriveClass", "\350\276\223\345\205\245\346\234\254\345\234\260\347\233\230\347\254\246", nullptr));
 
         const bool __sortingEnabled = listWidget->isSortingEnabled();
         listWidget->setSortingEnabled(false);
