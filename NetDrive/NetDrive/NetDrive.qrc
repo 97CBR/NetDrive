@@ -1,4 +1,6 @@
 <RCC>
-    <qresource prefix="NetDrive">
+    <qresource prefix="/NetDrive">
+        <file>Resources/add.png</file>
+        <file>Resources/network 2.png</file>
     </qresource>
 </RCC>

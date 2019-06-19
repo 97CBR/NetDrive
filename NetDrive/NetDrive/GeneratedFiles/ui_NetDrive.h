@@ -31,19 +31,23 @@ class Ui_NetDriveClass
 public:
     QWidget *centralWidget;
     QWidget *widget;
-    QLabel *label_16;
-    QWidget *widget_2;
+    QPushButton *pushButton_2;
+    QLabel *label;
     QLabel *label_2;
+    QWidget *widget_2;
     QPushButton *pushButton;
-    QLineEdit *remoteName;
-    QLabel *label_5;
-    QLineEdit *userName;
-    QLineEdit *password;
-    QLabel *label_4;
-    QLabel *label_15;
     QWidget *horizontalWidget_2;
     QHBoxLayout *horizontalLayout_3;
     QLineEdit *localName;
+    QWidget *horizontalWidget_3;
+    QHBoxLayout *horizontalLayout_4;
+    QLineEdit *remoteName;
+    QWidget *horizontalWidget_4;
+    QHBoxLayout *horizontalLayout_5;
+    QLineEdit *userName;
+    QWidget *horizontalWidget_5;
+    QHBoxLayout *horizontalLayout_6;
+    QLineEdit *password;
     QWidget *widget_3;
     QListWidget *listWidget;
     QWidget *horizontalLayoutWidget;
@@ -56,32 +60,53 @@ public:
     QProgressBar *progressBar;
     QLabel *label_14;
     QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
 
     void setupUi(QMainWindow *NetDriveClass)
     {
         if (NetDriveClass->objectName().isEmpty())
             NetDriveClass->setObjectName(QStringLiteral("NetDriveClass"));
-        NetDriveClass->resize(771, 693);
+        NetDriveClass->resize(600, 672);
         centralWidget = new QWidget(NetDriveClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         widget = new QWidget(centralWidget);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(0, 0, 771, 50));
+        widget->setGeometry(QRect(0, 0, 600, 30));
         widget->setStyleSheet(QStringLiteral("background-color: rgb(198, 47, 47);"));
-        label_16 = new QLabel(widget);
-        label_16->setObjectName(QStringLiteral("label_16"));
-        label_16->setGeometry(QRect(160, 10, 251, 31));
-        label_16->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
+        pushButton_2 = new QPushButton(widget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(515, 6, 71, 21));
+        pushButton_2->setStyleSheet(QLatin1String("background-color: rgb(198,47,47);\n"
+"font-size:15px;\n"
+"color: #FFFFFF;\n"
+"letter-spacing: 0;\n"
+"text-align: center;\n"
+"border-top-right-radius: 8px; \n"
+"border-bottom-left-radius: 8px;\n"
+"border-top-left-radius: 8px; \n"
+"border-bottom-right-radius: 8px;"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/NetDrive/Resources/add.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon);
+        pushButton_2->setIconSize(QSize(16, 16));
+        label = new QLabel(widget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(3, 2, 25, 25));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/NetDrive/Resources/network 2.png")));
+        label->setScaledContents(true);
+        label_2 = new QLabel(widget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(37, 5, 55, 23));
+        label_2->setStyleSheet(QStringLiteral("color: #FFFFFF;"));
         widget_2 = new QWidget(centralWidget);
         widget_2->setObjectName(QStringLiteral("widget_2"));
-        widget_2->setGeometry(QRect(0, 50, 770, 200));
+        widget_2->setGeometry(QRect(0, 30, 600, 200));
         widget_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
-        label_2 = new QLabel(widget_2);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(330, 70, 71, 21));
         pushButton = new QPushButton(widget_2);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(250, 150, 91, 21));
+        pushButton->setGeometry(QRect(250, 160, 91, 31));
         pushButton->setStyleSheet(QLatin1String("background-color: rgb(184,37,37);\n"
 "font-size:12px;\n"
 "color: #FFFFFF;\n"
@@ -94,27 +119,9 @@ public:
 "border-bottom-left-radius: 8px;\n"
 "border-top-left-radius: 8px; \n"
 "border-bottom-right-radius: 8px;"));
-        remoteName = new QLineEdit(widget_2);
-        remoteName->setObjectName(QStringLiteral("remoteName"));
-        remoteName->setGeometry(QRect(420, 70, 113, 20));
-        label_5 = new QLabel(widget_2);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(340, 120, 54, 12));
-        userName = new QLineEdit(widget_2);
-        userName->setObjectName(QStringLiteral("userName"));
-        userName->setGeometry(QRect(180, 120, 113, 20));
-        password = new QLineEdit(widget_2);
-        password->setObjectName(QStringLiteral("password"));
-        password->setGeometry(QRect(420, 120, 113, 20));
-        label_4 = new QLabel(widget_2);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(100, 120, 54, 12));
-        label_15 = new QLabel(widget_2);
-        label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setGeometry(QRect(370, 150, 251, 31));
         horizontalWidget_2 = new QWidget(widget_2);
         horizontalWidget_2->setObjectName(QStringLiteral("horizontalWidget_2"));
-        horizontalWidget_2->setGeometry(QRect(80, 30, 211, 41));
+        horizontalWidget_2->setGeometry(QRect(40, 30, 211, 41));
         horizontalWidget_2->setStyleSheet(QStringLiteral("background-color: rgb(240, 240, 240);"));
         horizontalLayout_3 = new QHBoxLayout(horizontalWidget_2);
         horizontalLayout_3->setSpacing(6);
@@ -134,14 +141,71 @@ public:
 
         horizontalLayout_3->addWidget(localName);
 
+        horizontalWidget_3 = new QWidget(widget_2);
+        horizontalWidget_3->setObjectName(QStringLiteral("horizontalWidget_3"));
+        horizontalWidget_3->setGeometry(QRect(340, 30, 211, 41));
+        horizontalWidget_3->setStyleSheet(QStringLiteral("background-color: rgb(240, 240, 240);"));
+        horizontalLayout_4 = new QHBoxLayout(horizontalWidget_3);
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(10, 8, 10, 8);
+        remoteName = new QLineEdit(horizontalWidget_3);
+        remoteName->setObjectName(QStringLiteral("remoteName"));
+        sizePolicy.setHeightForWidth(remoteName->sizePolicy().hasHeightForWidth());
+        remoteName->setSizePolicy(sizePolicy);
+        remoteName->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"border:1px solid rgb(225, 225, 225);\n"
+""));
+
+        horizontalLayout_4->addWidget(remoteName);
+
+        horizontalWidget_4 = new QWidget(widget_2);
+        horizontalWidget_4->setObjectName(QStringLiteral("horizontalWidget_4"));
+        horizontalWidget_4->setGeometry(QRect(40, 100, 211, 41));
+        horizontalWidget_4->setStyleSheet(QStringLiteral("background-color: rgb(240, 240, 240);"));
+        horizontalLayout_5 = new QHBoxLayout(horizontalWidget_4);
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(10, 8, 10, 8);
+        userName = new QLineEdit(horizontalWidget_4);
+        userName->setObjectName(QStringLiteral("userName"));
+        sizePolicy.setHeightForWidth(userName->sizePolicy().hasHeightForWidth());
+        userName->setSizePolicy(sizePolicy);
+        userName->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"border:1px solid rgb(225, 225, 225);\n"
+""));
+
+        horizontalLayout_5->addWidget(userName);
+
+        horizontalWidget_5 = new QWidget(widget_2);
+        horizontalWidget_5->setObjectName(QStringLiteral("horizontalWidget_5"));
+        horizontalWidget_5->setGeometry(QRect(340, 100, 211, 41));
+        horizontalWidget_5->setStyleSheet(QStringLiteral("background-color: rgb(240, 240, 240);"));
+        horizontalLayout_6 = new QHBoxLayout(horizontalWidget_5);
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        horizontalLayout_6->setContentsMargins(10, 8, 10, 8);
+        password = new QLineEdit(horizontalWidget_5);
+        password->setObjectName(QStringLiteral("password"));
+        sizePolicy.setHeightForWidth(password->sizePolicy().hasHeightForWidth());
+        password->setSizePolicy(sizePolicy);
+        password->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"border:1px solid rgb(225, 225, 225);\n"
+""));
+
+        horizontalLayout_6->addWidget(password);
+
         widget_3 = new QWidget(centralWidget);
         widget_3->setObjectName(QStringLiteral("widget_3"));
-        widget_3->setGeometry(QRect(0, 250, 771, 441));
+        widget_3->setGeometry(QRect(0, 230, 600, 441));
         widget_3->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
         listWidget = new QListWidget(widget_3);
         new QListWidgetItem(listWidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(20, 30, 731, 301));
+        listWidget->setGeometry(QRect(25, 0, 550, 320));
         horizontalLayoutWidget = new QWidget(widget_3);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(20, 340, 411, 81));
@@ -156,7 +220,7 @@ public:
         horizontalLayout->addWidget(label_11);
 
         verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(6);
+        verticalLayout->setSpacing(10);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(-1, -1, -1, 0);
         horizontalLayout_2 = new QHBoxLayout();
@@ -178,6 +242,8 @@ public:
 
         progressBar = new QProgressBar(horizontalLayoutWidget);
         progressBar->setObjectName(QStringLiteral("progressBar"));
+        sizePolicy.setHeightForWidth(progressBar->sizePolicy().hasHeightForWidth());
+        progressBar->setSizePolicy(sizePolicy);
         progressBar->setValue(24);
 
         verticalLayout->addWidget(progressBar);
@@ -197,24 +263,64 @@ public:
         horizontalLayout->setStretch(1, 10);
         pushButton_3 = new QPushButton(widget_3);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(550, 370, 131, 31));
+        pushButton_3->setGeometry(QRect(530, 340, 41, 31));
         pushButton_3->setStyleSheet(QLatin1String("background-color: rgb(184,37,37);\n"
 "font-size:12px;\n"
 "color: #FFFFFF;\n"
 "letter-spacing: 0;\n"
 "text-align: center;\n"
-"    border-top-right-radius: 8px; /* same radius as the QComboBox */\n"
-"    border-bottom-left-radius: 8px;\n"
-"\n"
+"border-top-right-radius: 8px; \n"
+"border-bottom-left-radius: 8px;\n"
+"border-top-left-radius: 8px; \n"
+"border-bottom-right-radius: 8px;"));
+        pushButton_4 = new QPushButton(widget_3);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(440, 390, 61, 31));
+        pushButton_4->setStyleSheet(QLatin1String("background-color: rgb(184,37,37);\n"
+"font-size:12px;\n"
+"color: #FFFFFF;\n"
+"letter-spacing: 0;\n"
+"text-align: center;\n"
+"border-top-right-radius: 8px; \n"
+"border-bottom-left-radius: 8px;\n"
+"border-top-left-radius: 8px; \n"
+"border-bottom-right-radius: 8px;"));
+        pushButton_5 = new QPushButton(widget_3);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(510, 390, 61, 31));
+        pushButton_5->setStyleSheet(QLatin1String("background-color: rgb(184,37,37);\n"
+"font-size:12px;\n"
+"color: #FFFFFF;\n"
+"letter-spacing: 0;\n"
+"text-align: center;\n"
+"border-top-right-radius: 8px; \n"
+"border-bottom-left-radius: 8px;\n"
+"border-top-left-radius: 8px; \n"
+"border-bottom-right-radius: 8px;"));
+        pushButton_6 = new QPushButton(widget_3);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(440, 340, 61, 31));
+        pushButton_6->setStyleSheet(QLatin1String("background-color: rgb(184,37,37);\n"
+"font-size:12px;\n"
+"color: #FFFFFF;\n"
+"letter-spacing: 0;\n"
+"text-align: center;\n"
 "border-top-right-radius: 8px; \n"
 "border-bottom-left-radius: 8px;\n"
 "border-top-left-radius: 8px; \n"
 "border-bottom-right-radius: 8px;"));
         NetDriveClass->setCentralWidget(centralWidget);
+        QWidget::setTabOrder(localName, remoteName);
+        QWidget::setTabOrder(remoteName, userName);
+        QWidget::setTabOrder(userName, password);
+        QWidget::setTabOrder(password, pushButton);
+        QWidget::setTabOrder(pushButton, listWidget);
+        QWidget::setTabOrder(listWidget, pushButton_3);
 
         retranslateUi(NetDriveClass);
         QObject::connect(pushButton, SIGNAL(clicked()), NetDriveClass, SLOT(connectDrive()));
         QObject::connect(pushButton_3, SIGNAL(clicked()), NetDriveClass, SLOT(moveWidgets()));
+        QObject::connect(pushButton_2, SIGNAL(clicked()), NetDriveClass, SLOT(moveWidgets()));
 
         QMetaObject::connectSlotsByName(NetDriveClass);
     } // setupUi
@@ -222,13 +328,14 @@ public:
     void retranslateUi(QMainWindow *NetDriveClass)
     {
         NetDriveClass->setWindowTitle(QApplication::translate("NetDriveClass", "NetDrive", nullptr));
-        label_16->setText(QApplication::translate("NetDriveClass", "\344\270\212\351\235\242\350\246\201\346\224\276\346\214\211\351\222\256", nullptr));
-        label_2->setText(QApplication::translate("NetDriveClass", "\346\234\215\345\212\241\345\231\250\345\234\260\345\235\200", nullptr));
+        pushButton_2->setText(QApplication::translate("NetDriveClass", "Add", nullptr));
+        label->setText(QString());
+        label_2->setText(QApplication::translate("NetDriveClass", "NetDrive", nullptr));
         pushButton->setText(QApplication::translate("NetDriveClass", "\350\277\236\346\216\245\351\251\261\345\212\250\345\231\250", nullptr));
-        label_5->setText(QApplication::translate("NetDriveClass", "\345\257\206\347\240\201", nullptr));
-        label_4->setText(QApplication::translate("NetDriveClass", "\350\264\246\345\217\267", nullptr));
-        label_15->setText(QApplication::translate("NetDriveClass", "\345\201\232\346\210\220\344\270\200\344\270\252\345\217\257\344\274\270\347\274\251\347\232\204\345\212\250\346\225\210", nullptr));
         localName->setPlaceholderText(QApplication::translate("NetDriveClass", "\350\276\223\345\205\245\346\234\254\345\234\260\347\233\230\347\254\246", nullptr));
+        remoteName->setPlaceholderText(QApplication::translate("NetDriveClass", "\346\234\215\345\212\241\345\231\250\345\234\260\345\235\200", nullptr));
+        userName->setPlaceholderText(QApplication::translate("NetDriveClass", "\350\264\246\345\217\267", nullptr));
+        password->setPlaceholderText(QApplication::translate("NetDriveClass", "\345\257\206\347\240\201", nullptr));
 
         const bool __sortingEnabled = listWidget->isSortingEnabled();
         listWidget->setSortingEnabled(false);
@@ -241,6 +348,9 @@ public:
         label_13->setText(QApplication::translate("NetDriveClass", "remotePath", nullptr));
         label_14->setText(QApplication::translate("NetDriveClass", "TextLabel", nullptr));
         pushButton_3->setText(QApplication::translate("NetDriveClass", "\347\202\271\345\207\273\346\265\213\350\257\225\347\225\214\351\235\242\344\274\270\347\274\251", nullptr));
+        pushButton_4->setText(QApplication::translate("NetDriveClass", "\346\226\255\345\274\200\350\277\236\346\216\245", nullptr));
+        pushButton_5->setText(QApplication::translate("NetDriveClass", "\350\256\276\347\275\256", nullptr));
+        pushButton_6->setText(QApplication::translate("NetDriveClass", "\345\210\240\351\231\244", nullptr));
     } // retranslateUi
 
 };

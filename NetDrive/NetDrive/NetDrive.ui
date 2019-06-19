@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>771</width>
-    <height>693</height>
+    <width>598</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,27 +19,80 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>771</width>
-      <height>50</height>
+      <width>600</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(198, 47, 47);</string>
     </property>
-    <widget class="QLabel" name="label_16">
+    <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>10</y>
-       <width>251</width>
-       <height>31</height>
+       <x>515</x>
+       <y>6</y>
+       <width>71</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(198,47,47);
+font-size:15px;
+color: #FFFFFF;
+letter-spacing: 0;
+text-align: center;
+border-top-right-radius: 8px; 
+border-bottom-left-radius: 8px;
+border-top-left-radius: 8px; 
+border-bottom-right-radius: 8px;</string>
      </property>
      <property name="text">
-      <string>上面要放按钮</string>
+      <string>Add</string>
+     </property>
+     <property name="icon">
+      <iconset resource="NetDrive.qrc">
+       <normaloff>:/NetDrive/Resources/add.png</normaloff>:/NetDrive/Resources/add.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>2</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="NetDrive.qrc">:/NetDrive/Resources/network 2.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>37</x>
+       <y>5</y>
+       <width>55</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #FFFFFF;</string>
+     </property>
+     <property name="text">
+      <string>NetDrive</string>
      </property>
     </widget>
    </widget>
@@ -47,8 +100,8 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>50</y>
-      <width>770</width>
+      <y>30</y>
+      <width>600</width>
       <height>200</height>
      </rect>
     </property>
@@ -58,10 +111,10 @@
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>290</x>
+       <x>250</x>
        <y>160</y>
        <width>91</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -82,23 +135,10 @@ border-bottom-right-radius: 8px;</string>
       <string>连接驱动器</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_15">
-     <property name="geometry">
-      <rect>
-       <x>600</x>
-       <y>161</y>
-       <width>151</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>做成一个可伸缩的动效</string>
-     </property>
-    </widget>
     <widget class="QWidget" name="horizontalWidget_2" native="true">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>40</x>
        <y>30</y>
        <width>211</width>
        <height>41</height>
@@ -143,7 +183,7 @@ border:1px solid rgb(225, 225, 225);
     <widget class="QWidget" name="horizontalWidget_3" native="true">
      <property name="geometry">
       <rect>
-       <x>380</x>
+       <x>340</x>
        <y>30</y>
        <width>211</width>
        <height>41</height>
@@ -166,7 +206,7 @@ border:1px solid rgb(225, 225, 225);
        <number>8</number>
       </property>
       <item>
-       <widget class="QLineEdit" name="localName_2">
+       <widget class="QLineEdit" name="remoteName">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -188,7 +228,7 @@ border:1px solid rgb(225, 225, 225);
     <widget class="QWidget" name="horizontalWidget_4" native="true">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>40</x>
        <y>100</y>
        <width>211</width>
        <height>41</height>
@@ -233,7 +273,7 @@ border:1px solid rgb(225, 225, 225);
     <widget class="QWidget" name="horizontalWidget_5" native="true">
      <property name="geometry">
       <rect>
-       <x>380</x>
+       <x>340</x>
        <y>100</y>
        <width>211</width>
        <height>41</height>
@@ -280,8 +320,8 @@ border:1px solid rgb(225, 225, 225);
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>250</y>
-      <width>771</width>
+      <y>230</y>
+      <width>600</width>
       <height>441</height>
      </rect>
     </property>
@@ -291,10 +331,10 @@ border:1px solid rgb(225, 225, 225);
     <widget class="QListWidget" name="listWidget">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>731</width>
-       <height>301</height>
+       <x>25</x>
+       <y>10</y>
+       <width>550</width>
+       <height>320</height>
       </rect>
      </property>
      <item>
@@ -379,9 +419,9 @@ border:1px solid rgb(225, 225, 225);
     <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
       <rect>
-       <x>550</x>
-       <y>370</y>
-       <width>131</width>
+       <x>520</x>
+       <y>340</y>
+       <width>41</width>
        <height>31</height>
       </rect>
      </property>
@@ -400,10 +440,91 @@ border-bottom-right-radius: 8px;</string>
       <string>点击测试界面伸缩</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>390</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(184,37,37);
+font-size:12px;
+color: #FFFFFF;
+letter-spacing: 0;
+text-align: center;
+border-top-right-radius: 8px; 
+border-bottom-left-radius: 8px;
+border-top-left-radius: 8px; 
+border-bottom-right-radius: 8px;</string>
+     </property>
+     <property name="text">
+      <string>断开连接</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>390</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(184,37,37);
+font-size:12px;
+color: #FFFFFF;
+letter-spacing: 0;
+text-align: center;
+border-top-right-radius: 8px; 
+border-bottom-left-radius: 8px;
+border-top-left-radius: 8px; 
+border-bottom-right-radius: 8px;</string>
+     </property>
+     <property name="text">
+      <string>设置</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>340</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(184,37,37);
+font-size:12px;
+color: #FFFFFF;
+letter-spacing: 0;
+text-align: center;
+border-top-right-radius: 8px; 
+border-bottom-left-radius: 8px;
+border-top-left-radius: 8px; 
+border-bottom-right-radius: 8px;</string>
+     </property>
+     <property name="text">
+      <string>删除</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>localName</tabstop>
+  <tabstop>remoteName</tabstop>
+  <tabstop>userName</tabstop>
+  <tabstop>password</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>listWidget</tabstop>
+  <tabstop>pushButton_3</tabstop>
+ </tabstops>
  <resources>
   <include location="NetDrive.qrc"/>
  </resources>
@@ -416,7 +537,7 @@ border-bottom-right-radius: 8px;</string>
    <hints>
     <hint type="sourcelabel">
      <x>284</x>
-     <y>255</y>
+     <y>220</y>
     </hint>
     <hint type="destinationlabel">
      <x>295</x>
@@ -431,12 +552,28 @@ border-bottom-right-radius: 8px;</string>
    <slot>moveWidgets()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>615</x>
-     <y>657</y>
+     <x>570</x>
+     <y>600</y>
     </hint>
     <hint type="destinationlabel">
-     <x>604</x>
-     <y>690</y>
+     <x>599</x>
+     <y>671</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>NetDriveClass</receiver>
+   <slot>moveWidgets()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>549</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>420</x>
+     <y>672</y>
     </hint>
    </hints>
   </connection>
@@ -444,6 +581,7 @@ border-bottom-right-radius: 8px;</string>
  <slots>
   <slot>connectDrive()</slot>
   <slot>moveWidgets()</slot>
-  <slot>slot1()</slot>
+  <slot>showOrHidden()</slot>
+  <slot>slot2()</slot>
  </slots>
 </ui>
