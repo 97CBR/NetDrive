@@ -68,7 +68,7 @@ public:
     {
         if (NetDriveClass->objectName().isEmpty())
             NetDriveClass->setObjectName(QStringLiteral("NetDriveClass"));
-        NetDriveClass->resize(600, 672);
+        NetDriveClass->resize(598, 670);
         centralWidget = new QWidget(NetDriveClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         widget = new QWidget(centralWidget);
@@ -205,7 +205,7 @@ public:
         listWidget = new QListWidget(widget_3);
         new QListWidgetItem(listWidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(25, 0, 550, 320));
+        listWidget->setGeometry(QRect(25, 10, 550, 320));
         horizontalLayoutWidget = new QWidget(widget_3);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(20, 340, 411, 81));
@@ -263,7 +263,7 @@ public:
         horizontalLayout->setStretch(1, 10);
         pushButton_3 = new QPushButton(widget_3);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(530, 340, 41, 31));
+        pushButton_3->setGeometry(QRect(520, 340, 41, 31));
         pushButton_3->setStyleSheet(QLatin1String("background-color: rgb(184,37,37);\n"
 "font-size:12px;\n"
 "color: #FFFFFF;\n"
