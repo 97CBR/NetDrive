@@ -27,12 +27,7 @@ void NetDrive::connectDrive()
 
 void NetDrive::moveWidgets()
 {
-	//for (int i = 0; i < ui.widget_2->width(); i+=10)
-	//{
-	//	ui.widget_2->setGeometry(QRect(i, ui.widget_2->y(), ui.widget_2->width(), ui.widget_2->height()));
-	//	//Sleep(0.5);
-	//	this->repaint();
-	//}
+
 	if (tabStatu)
 	{
 		for (int i = 0; i < ui.widget_2->height(); i += 10)
